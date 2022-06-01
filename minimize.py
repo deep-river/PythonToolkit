@@ -9,7 +9,7 @@ except ModuleNotFoundError:
         from pip import main as pipmain
     except:
         from pip._internal.main import main as pipmain
-    # main.main(['install', '-r', 'requirements.txt'])
+    # pipmain.main(['install', '-r', 'requirements.txt'])
     pipmain(['install', 'pillow'])
 
     from PIL import Image as im
@@ -59,5 +59,5 @@ def gif_resize(w, h, frames):
 if __name__ == "__main__":
     if len(sys.argv) == 2:
         minimize(sys.argv[1])
-    elif len(sys.argv) == 3:
+    if len(sys.argv) == 3:
         minimize(sys.argv[1], sys.argv[2])
