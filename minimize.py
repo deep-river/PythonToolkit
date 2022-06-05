@@ -42,8 +42,7 @@ def minimize(filename, threshold = [10, 24, 48]):
             tp = 255
             if 'transparency' in img.info:
                 tp = img.info["transparency"]
-            generated.save(new_filename, format=img_format, transparency=tp, save_all=True,
-                            append_images=list(resized), loop=0)
+            generated.save(new_filename, format=img_format, transparency=tp, save_all=True, append_images=list(resized), loop=0, disposal=2, optimize=False)
         else:
             resized = img.resize((w, h), 1)
             resized.save(new_filename, format=img_format)
